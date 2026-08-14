@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Projeto Facul</title>
+</head>
+<body>
+    <h1 calss="justify-content-center">FINANCE</h1>
+
+    <div>
+        <label for="form">
+            Digite seu nome:
+            <input type="text" id='nome' placeholder="Eduardo...">
+            <button onclick="salvarNome()">Salvar</button>
+            <p id='resultado'></p>
+        </label>
+    </div>
+
+    <div>
+        <label for="form">
+            Digite seu Salario:
+            <input type="number" id="salario" placeholder="Ex: R$1000">
+            <button onclick="salvarSalario()">Salvar</button>
+            <p id="resultadoSalario"></p>
+        </label>
+    </div>
+
+    <div>
+        <label for="form">
+            Digite seus gastos:
+            <input type="number" id='gastos' placeholder="Ex: R$120">
+            <button onclick="salvarGastos()">Salvar</button>
+            <p id="resultadoGastos"></p>
+        </label>
+    </div>
+
+    <script>
+
+        let salarioPrincipal = 0;
+        let fontes = [];
+        let despesas = 0;
+
+        function salvarNome(){
+            const nome = document.getElementById('nome').value;
+            document.getElementById('resultado').textContent = `Olá, ${nome}`;
+        }
+
+        function salvarSalario(){
+            const salario = document.getElementById('salario').value;
+            salarioPrincipal = Number(salario);
+            document.getElementById('resultadoSalario').textContent = `Salario R$${salarioPrincipal.toFixed(2)}`;
+            calcularTotal()
+        }
+
+        function salvarGastos(){
+            const gastostotal = document.getElementById('gastos').value;
+            despesas = Number(gastostotal);
+            document.getElementById('resultadoGastos').textContent = `Seus Gastos: R$${despesas.toFixed(2)}`;
+        }
+
+        function montanteFinal(){
+            salarioPrincipal
+        }
+    </script>
+</body>
+</html>
