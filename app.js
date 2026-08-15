@@ -23,3 +23,13 @@ let salarioPrincipal = 0;
         function montanteFinal(){
             salarioPrincipal
         }
+
+
+//TESTE Modal Bootstrap (Pop-up)
+
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
