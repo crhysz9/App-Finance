@@ -3,6 +3,7 @@ Puxar ultima atualização:
 
 Importar atualizações:
 - git add .
+- git commit -m "Descrição aqui"
 - git push origin main
 
 node_modules
