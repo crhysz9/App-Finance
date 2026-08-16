@@ -18,20 +18,20 @@ function salvarSalario(){
 function salvarGastos(){
     const tipoDespesa = document.getElementById('tipoDespesa').value;
     const valorDespesa = Number(document.getElementById('valorDespesa').value);
-    const novaDespesa = {
+    let novaDespesa = {
         tipo: tipoDespesa,
         valor: valorDespesa
     };
     despesas.push(novaDespesa); //Adicionar na array tlgd
     const listaDespesas = document.getElementById('listaDespesas'); //seelecionando a div 
-    listaDespesas.innerHTML = ''; // apareeceer na div listaDespesas
+    listaDespesas.innerHTML = 'Suas Despesas:<br>'; // apareeceer na div listaDespesas
     despesas.forEach(function(despesa) { // percorrer a array e exibir na div
-        listaDespesas.innerHTML += `<p>${despesa.tipo}</p> <br/> <p>R$ ${despesa.valor.toFixed(2)}</p>`;
+        listaDespesas.innerHTML += `${despesa.tipo} | R$ ${despesa.valor.toFixed(2)}<br>`;
     });
     //
     const total = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
 
-    document.getElementById('resultadoGastos').textContent = `Seus Gastos: R$${total.toFixed(2)}`;
+    document.getElementById('resultadoGastos').innerHTML = `Total em Despesas: R$${total.toFixed(2)}<br>Suas Despesas:<br>${novaDespesa.tipo} | R$ ${novaDespesa.valor.toFixed(2)}<br>`;
 
     montanteFinal();
 }
@@ -41,7 +41,7 @@ function montanteFinal(){
     const salario = Number(document.getElementById('salario').value)
     const totalDespesas = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
     let restante = salarioPrincipal - totalDespesas;
-    document.getElementById('dinheiroRestante').textContent = `Salário: ${salario} <br/> ${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
+    document.getElementById('dinheiroRestante').innerHTML = `Seu Salário: R$${salario}<br>${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
 }
 
 
