@@ -15,9 +15,10 @@ function salvarSalario(){
 }
 
 function salvarGastos(){
-    const gastostotal = document.getElementById('gastos').value;
+    const gastostotal = document.getElementById('valorDespesa').value;
+    const tipoGasto = document.getElementById('tipoDespesa').value;
     despesas = Number(gastostotal);
-    document.getElementById('resultadoGastos').textContent = `Seus Gastos: R$${despesas.toFixed(2)}`;
+    document.getElementById('resultadoGastos').textContent = `Seus Gastos:\n ${tipoGasto}- R$${despesas.toFixed(2)}`;
     montanteFinal()
 }
 

@@ -1,0 +1,6 @@
+Puxar ultima atualização:
+- git pull origin main
+
+Importar atualizações:
+- git add .
+- git push origin main

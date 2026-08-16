@@ -36,42 +36,7 @@
     <div>
         <h1 class="text-center">Seja bem vindo ao FINANCE</h1>
     </div>
-
-<!-- TESTE tentando saber usar o modal (pop-up) do bootstrap ⬇️-->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Adicionar despesa (TESTE)
-</button>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicione sua despesa</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="tipoDespesa" class="form-label">Tipo da despeza</label>
-            <input type="text" class="form-control" id="tipoDespesa" aria-describedby="emailHelp">
-            
-          </div>
-          <div class="mb-3">
-            <label for="valorDespesa" class="form-label">Valor da despeza</label>
-            <input type="number" class="form-control" id="valorDespesa">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Enviar</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- TESTE tentando saber usar o modal (pop-up) do bootstrap ⬆️-->
-
-    
+  
     <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
         <h1 calss="justify-content-center text-align-center">FINANCE</h1>
             <div class="">
@@ -92,13 +57,38 @@
             </label>
         </div>
 
-        <div>
-            <label for="form">
-                Digite seus gastos:
-                <input type="text" id="gastos" class="form-control" >
-                <button class="btn btn-success" onclick="salvarGastos()">Salvar</button>
-                <p id="resultadoGastos"></p>
-            </label>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Adicionar despesas
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicione sua despesa</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="tipoDespesa" class="form-label">Tipo da despeza</label>
+                    <input type="text" class="form-control" id="tipoDespesa" aria-describedby="emailHelp">
+                    
+                  </div>
+                  <div class="mb-3">
+                    <label for="valorDespesa" class="form-label">Valor da despeza</label>
+                    <input type="number" class="form-control" id="valorDespesa">
+                    <hr>
+                    <p id="resultadoGastos"></p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" onclick="salvarGastos()">Enviar</button>
+              </div>
+            </div>
+          </div>
         </div>
         <!--Mostrar o dinheiro restante:-->
         <div id="dinheiroRestante"></div>  
