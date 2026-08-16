@@ -36,32 +36,49 @@
     <div>
         <h1 class="text-center">Seja bem vindo ao FINANCE</h1>
     </div>
-  
-    <div class="container min-vh-100 d-flex flex-column justify-content-center align-items-center">
-        <h1 calss="justify-content-center text-align-center">FINANCE</h1>
-            <div class="">
-            <label for="form">
+    
+
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalRenda">
+  Adicionar renda
+</button>
+
+<div class="modal fade" id="modalRenda" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicione sua renda </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="form">
                 Digite seu nome:
                 <input id="nome" type="text" class="form-control">
                 <button class=" p-2 btn btn-success" onclick="salvarNome()">Salvar</button>
                 <p id='resultado'></p>
             </label>
-        </div>
-
-        <div>
             <label for="form">
                 Digite seu Salario:
                 <input id="salario" type="text" class="form-control">
                 <button class="btn btn-success" onclick="salvarSalario()">Salvar</button>
                 <p id="resultadoSalario"></p>
             </label>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="salvarRenda()">
+        Enviar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalDespesa">
           Adicionar despesas
         </button>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalDespesa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -90,6 +107,11 @@
             </div>
           </div>
         </div>
+
+        <div id="listaDespesas"></div>
+
+
+
         <!--Mostrar o dinheiro restante:-->
         <div id="dinheiroRestante"></div>  
     </div>

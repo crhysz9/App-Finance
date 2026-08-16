@@ -1,6 +1,6 @@
 let salarioPrincipal = 0;
 let fontes = [];
-let despesas = 0;
+let despesas = [];
 
 function salvarNome(){
     const nome = document.getElementById('nome').value;
@@ -14,19 +14,36 @@ function salvarSalario(){
     montanteFinal()
 }
 
+//  DESPESAS / GASTOS
 function salvarGastos(){
-    const gastostotal = document.getElementById('valorDespesa').value;
-    const tipoGasto = document.getElementById('tipoDespesa').value;
-    despesas = Number(gastostotal);
-    document.getElementById('resultadoGastos').textContent = `Seus Gastos:\n ${tipoGasto}- R$${despesas.toFixed(2)}`;
-    montanteFinal()
+    const tipoDespesa = document.getElementById('tipoDespesa').value;
+    const valorDespesa = Number(document.getElementById('valorDespesa').value);
+    const novaDespesa = {
+        tipo: tipoDespesa,
+        valor: valorDespesa
+    };
+    despesas.push(novaDespesa); //Adicionar na array tlgd
+    const listaDespesas = document.getElementById('listaDespesas'); //seelecionando a div 
+    listaDespesas.innerHTML = ''; // apareeceer na div listaDespesas
+    despesas.forEach(function(despesa) { // percorrer a array e exibir na div
+        listaDespesas.innerHTML += `<p>${despesa.tipo}</p> <br/> <p>R$ ${despesa.valor.toFixed(2)}</p>`;
+    });
+    //
+    const total = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
+
+    document.getElementById('resultadoGastos').textContent = `Seus Gastos: R$${total.toFixed(2)}`;
+
+    montanteFinal();
 }
 
 function montanteFinal(){
     const user = document.getElementById('nome').value;
-    let restante = salarioPrincipal - despesas;
-    document.getElementById('dinheiroRestante').textContent = `${user}, vai restar R$${restante.toFixed(2)} este mês.`;
+    const salario = Number(document.getElementById('salario').value)
+    const totalDespesas = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
+    let restante = salarioPrincipal - totalDespesas;
+    document.getElementById('dinheiroRestante').textContent = `Salário: ${salario} <br/> ${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
 }
+
 
 
 //TESTE Modal Bootstrap (Pop-up)
