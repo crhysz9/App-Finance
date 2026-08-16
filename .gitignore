@@ -4,3 +4,7 @@ Puxar ultima atualização:
 Importar atualizações:
 - git add .
 - git push origin main
+
+node_modules
+package.json
+package.--lock.json
