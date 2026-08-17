@@ -14,11 +14,14 @@ function salvarSalario(){
     montanteFinal()
 }
 
+<<<<<<< HEAD
 function salvarRendaExtra(){
     const tipoFonte = document.getElementById('tipoFonteDeRenda').value;
     
 }
 
+=======
+>>>>>>> 417b58070590de1bd8f94a09092c9996494e2a86
 //  DESPESAS / GASTOS
 function salvarGastos(){
     const tipoDespesa = document.getElementById('tipoDespesa').value;
