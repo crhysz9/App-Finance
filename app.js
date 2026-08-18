@@ -3,15 +3,10 @@ let valorTotalRendaExtra = 0;
 let rendaExtra = [];
 let despesas = [];
 
-function salvarNome(){
+function salvarRenda(){
     const nome = document.getElementById('nome').value;
-    document.getElementById('resultado').textContent = `Olá, ${nome}`;
-}
-
-function salvarSalario(){
     const salario = document.getElementById('salario').value;
     salarioPrincipal = Number(salario);
-    document.getElementById('resultadoSalario').textContent = `Salario R$${(salarioPrincipal + valorTotalRendaExtra).toFixed(2)}`;
     montanteFinal()
 }
 

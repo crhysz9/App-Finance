@@ -54,19 +54,15 @@
                     </div>
                     <div class="modal-body">
                         <label for="nome"> Digite seu Nome:
-                            <input id="nome" type="text" class="form-control">
-                            <button class="p-2 btn btn-success" onclick="salvarNome()">Salvar</button>
-                            <p id='resultado'></p>
+                            <input id="nome" type="text" class="form-control" placeholder="Ex: João, Eduardo...">
                         </label>
                         <label for="salario"> Digite seu Salario:
-                            <input id="salario" type="text" class="form-control">
-                            <button class="btn btn-success" onclick="salvarSalario()">Salvar</button>
-                            <p id="resultadoSalario"></p>
+                            <input id="salario" type="text" class="form-control" placeholder="Ex: R$1600, R$1500...">
                         </label>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="salvarRenda()"> Enviar </button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="salvarRenda()"> Salvar </button>
                         <button class="btn btn-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Adicionar Renda Extra</button>
                     </div>
                 </div>
