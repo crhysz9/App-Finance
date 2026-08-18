@@ -41,12 +41,10 @@
     </header>
 
     <div>
-        <h1 class="text-center">Seja bem vindo ao FINANCE</h1>
+        <h1 class="text-center p-2">Seja bem vindo ao FINANCE</h1>
     </div>
 
-    <hr>
-
-    <div class="text-center">
+    <div class="text-center p-2"> <!--MODAL PARA RENDA-->
         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -93,16 +91,17 @@
                                     </div>
                                 </form>
                             </div>
+                            <div id="resultadoRendaExtra"></div>
                             <div class="modal-footer">
                                 <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Voltar</button>
-                                <button class="btn btn-success" data-bs-dismiss="modal" onclick="">Salvar</button>
+                                <button class="btn btn-success" data-bs-dismiss="modal" onclick="salvarRendaExtra()">Salvar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Adicinar Renda</button>
         </div>
-    </div>
+    </div> <!--FIM DO MODAL PARA RENDA-->
 
     <div class="text-center"> <!--MODAL PARA ADICIONAR DESPESAS-->
       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalDespesa">

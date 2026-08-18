@@ -1,5 +1,6 @@
 let salarioPrincipal = 0;
-let fontes = [];
+let valorTotalRendaExtra = 0;
+let rendaExtra = [];
 let despesas = [];
 
 function salvarNome(){
@@ -10,13 +11,26 @@ function salvarNome(){
 function salvarSalario(){
     const salario = document.getElementById('salario').value;
     salarioPrincipal = Number(salario);
-    document.getElementById('resultadoSalario').textContent = `Salario R$${salarioPrincipal.toFixed(2)}`;
+    document.getElementById('resultadoSalario').textContent = `Salario R$${(salarioPrincipal + valorTotalRendaExtra).toFixed(2)}`;
     montanteFinal()
 }
 
 function salvarRendaExtra(){
-    const tipoFonte = document.getElementById('tipoFonteDeRenda').value;
-    
+    const tipoRenda = document.getElementById('descricaoRendaExtra').value;
+    const valorRenda = Number(document.getElementById('valorRendaExtra').value);
+    let novaRendaExtra = {
+        nome : tipoRenda,
+        valor : valorRenda
+    };
+    rendaExtra.push(novaRendaExtra);
+    const totalRendaExtra = rendaExtra.reduce((soma, rendaExtra) => soma + rendaExtra.valor, 0);
+    valorTotalRendaExtra = totalRendaExtra;
+    const listaRendaExtra = document.getElementById('resultadoRendaExtra');
+    listaRendaExtra.innerHTML = "";
+    rendaExtra.forEach(function(rendaExtra){
+        listaRendaExtra.innerHTML = `Total de suas Rendas Extras: R$${totalRendaExtra.toFixed(2)}<br>Suas Rendas Extras:<br>${rendaExtra.nome} | ${rendaExtra.valor.toFixed(2)}<br>`;
+    });
+    montanteFinal();
 }
 //  DESPESAS / GASTOS
 function salvarGastos(){
@@ -43,10 +57,11 @@ function salvarGastos(){
 
 function montanteFinal(){
     const user = document.getElementById('nome').value;
-    const salario = Number(document.getElementById('salario').value)
+    const salario = Number(document.getElementById('salario').value);
     const totalDespesas = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
-    let restante = salarioPrincipal - totalDespesas;
-    document.getElementById('dinheiroRestante').innerHTML = `Seu Salário: R$${salario}<br>${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
+    let restante = (salarioPrincipal + valorTotalRendaExtra) - totalDespesas;
+    let salarioTotal = salarioPrincipal + valorTotalRendaExtra
+    document.getElementById('dinheiroRestante').innerHTML = `Seu Salário Total: R$${salarioTotal}<br>${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
 }
 
 //TESTE Modal Bootstrap (Pop-up)
