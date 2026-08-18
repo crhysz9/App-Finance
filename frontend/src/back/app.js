@@ -44,6 +44,7 @@ function salvarGastos() {
     };
 
     despesas.push(novaDespesa); //Adicionar na array tlgd
+
     const total = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
     const listaDespesas = document.getElementById('listaDespesas'); //seelecionando a div 
 
@@ -66,6 +67,7 @@ function montanteFinal() {
     const user = document.getElementById('nome').value;
     const salario = Number(document.getElementById('salario').value);
     const totalDespesas = despesas.reduce((soma, despesa) => soma + despesa.valor, 0);
+
     let restante = (salarioPrincipal + valorTotalRendaExtra) - totalDespesas;
     let salarioTotal = salarioPrincipal + valorTotalRendaExtra
 
@@ -73,7 +75,10 @@ function montanteFinal() {
     document.getElementById('dinheiroRestante').innerHTML = `Seu Salário Total: R$${salarioTotal}<br>${user}, vai restar R$ ${restante.toFixed(2)} do seu salário este mês.`;
 }
 
+
+
 // passa as funçoes para o React
+
 window.salvarRenda = salvarRenda;
 window.salvarRendaExtra = salvarRendaExtra;
 window.salvarGastos = salvarGastos;
